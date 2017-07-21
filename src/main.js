@@ -2,11 +2,13 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import Navbar from './components/layout/Navbar'
+import Tray from './components/layout/Tray'
 import router from './router'
-import VueBlu from 'vue-blu'
-import 'vue-blu/dist/css/vue-blu.min.css'
+import Buefy from 'buefy'
+import 'buefy/lib/buefy.css'
 
-Vue.use(VueBlu)
+Vue.use(Buefy)
 
 Vue.config.productionTip = false
 
@@ -15,5 +17,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App, Navbar, Tray }
 })

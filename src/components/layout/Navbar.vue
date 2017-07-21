@@ -21,7 +21,17 @@
       <span></span>
     </div>
     <div class="navbar-menu">
-
+      <div class="navbar-end">
+        <a class="navbar-item">
+          Menu Item 1
+        </a>
+        <a class="navbar-item">
+          Menu Item 2
+        </a>
+        <a class="navbar-item">
+          Menu Item 3
+        </a>
+      </div>
     </div>
 
   </nav>
@@ -29,5 +39,7 @@
 </template>
 
 <script>
-
+  export default {
+    name: 'navbar'
+  }
 </script>
