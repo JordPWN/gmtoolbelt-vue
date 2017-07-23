@@ -1,24 +1,26 @@
 <template>
   <div class="tray" :class="{ active: isActive, 'text-danger': hasError}">
-    Placeholder
+    <TrayMenu />
+    <TrayTarget />
     <div class="tray-toggle" v-on:click="toggleActive">
-      Open/Close
+      >
     </div>
   </div>
 </template>
 
 <script>
+  import TrayMenu from './TrayMenu'
+  import TrayTarget from './TrayTarget'
   export default {
     name: 'tray',
     methods: {
-      emitToggle: function (event) {
-        this.$emit('active')
-        console.log('Emit!')
-      },
       toggleActive: function (event) {
         this.isActive = !this.isActive
-        console.log('Received!')
       }
+    },
+    components: {
+      TrayMenu,
+      TrayTarget
     },
     data () {
       return {
@@ -31,12 +33,15 @@
 
 <style>
   .active {
-    /*color: pink;*/
+    color: white;
   }
   .tray {
+    display: flex;
     position: fixed;
     top: 3.25em;
-    background-color: grey;
+    background-color: skyblue;
+    overflow: auto;
+    transition: all 1s;
     width: 3.25em;
     height: calc(100vh - 3.25em);
   }
@@ -45,6 +50,8 @@
   }
   .tray-toggle {
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     right: 0;
     top: 0;
