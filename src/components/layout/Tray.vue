@@ -1,7 +1,7 @@
 <template>
   <div class="tray" :class="{ active: isActive, 'text-danger': hasError}">
     Placeholder
-    <div class="tray-toggle">
+    <div class="tray-toggle" v-on:click="toggleActive">
       Open/Close
     </div>
   </div>
@@ -10,6 +10,16 @@
 <script>
   export default {
     name: 'tray',
+    methods: {
+      emitToggle: function (event) {
+        this.$emit('active')
+        console.log('Emit!')
+      },
+      toggleActive: function (event) {
+        this.isActive = !this.isActive
+        console.log('Received!')
+      }
+    },
     data () {
       return {
         isActive: true,
@@ -27,8 +37,11 @@
     position: fixed;
     top: 3.25em;
     background-color: grey;
-    width: 50vw;
+    width: 3.25em;
     height: calc(100vh - 3.25em);
+  }
+  .tray.active {
+    width: 50vw;
   }
   .tray-toggle {
     display: flex;

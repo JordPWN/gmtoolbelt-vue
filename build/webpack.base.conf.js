@@ -68,12 +68,6 @@ module.exports = {
         options: {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
-        },
-        {
-          loader: 'sass-resources-loader',
-          options: {
-            resources: path.resolve(__dirname, '../src/style/_variables.scss')
-          }
         }
       }
     ]
