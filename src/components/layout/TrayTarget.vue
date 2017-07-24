@@ -1,6 +1,6 @@
 <template>
   <div class='tray-target'>
-
+    <{{this.$store.activeTray}} />
   </div>
 </template>
 

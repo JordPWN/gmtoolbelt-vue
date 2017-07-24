@@ -2,16 +2,16 @@
   <div class="tray-menu">
     <ul>
       <li>
-        <a v-on:click="$emit('loadTray', 'target')">Dice</a>
+        <a v-on:click="emitTray('dice')">Dice</a>
       </li>
       <li>
-        <a v-on:click="$emit('loadTray', 'target')">Character Tracker</a>
+        <a v-on:click="emitTray('dice')">Character Tracker</a>
       </li>
       <li>
-        <a v-on:click="$emit('loadTray', 'target')">Spellbook</a>
+        <a v-on:click="emitTray('dice')">Spellbook</a>
       </li>
       <li>
-        <a v-on:click="$emit('loadTray', 'target')">Notes</a>
+        <a v-on:click="emitTray('dice')">Notes</a>
       </li>
     </ul>
   </div>
@@ -20,7 +20,13 @@
 
 <script>
   export default {
-    name: 'traymenu'
+    name: 'traymenu',
+    methods: {
+      emitTray: function (tray) {
+        console.log('Emmiting from menu!')
+        this.$store.commit('activeTray', 'dice')
+      }
+    }
   }
 </script>
 
