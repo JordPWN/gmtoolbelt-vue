@@ -1,11 +1,11 @@
 <template>
-  <div class="dice-tray">
-    Dice
+  <div class="notes-tray">
+    Notes
   </div>
 </template>
 <script>
   export default {
-    name: 'dice'
+    name: 'notes'
   }
 </script>
 <style>

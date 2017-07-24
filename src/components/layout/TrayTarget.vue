@@ -1,13 +1,21 @@
 <template>
   <div class='tray-target'>
-    <{{this.$store.activeTray}} />
+    <dice v-if="this.$store.state.activeTray == 'dice'" />
+    <notes v-if="this.$store.state.activeTray == 'notes'"/>
+    <tracker v-if="this.$store.state.activeTray == 'tracker'" />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'traytarget'
-}
+  import Dice from './tools/Dice'
+  import Notes from './tools/Notes'
+  import Tracker from './tools/Tracker'
+  export default {
+    name: 'traytarget',
+    components: {
+      Dice, Notes, Tracker
+    }
+  }
 </script>
 
 <style>

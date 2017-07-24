@@ -5,13 +5,13 @@
         <a v-on:click="emitTray('dice')">Dice</a>
       </li>
       <li>
-        <a v-on:click="emitTray('dice')">Character Tracker</a>
+        <a v-on:click="emitTray('tracker')">Character Tracker</a>
       </li>
       <li>
-        <a v-on:click="emitTray('dice')">Spellbook</a>
+        <a v-on:click="emitTray('spellbook')">Spellbook</a>
       </li>
       <li>
-        <a v-on:click="emitTray('dice')">Notes</a>
+        <a v-on:click="emitTray('notes')">Notes</a>
       </li>
     </ul>
   </div>
@@ -24,7 +24,7 @@
     methods: {
       emitTray: function (tray) {
         console.log('Emmiting from menu!')
-        this.$store.commit('activeTray', 'dice')
+        this.$store.commit('activeTray', tray)
       }
     }
   }
