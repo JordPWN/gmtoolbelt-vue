@@ -9,9 +9,10 @@ import router from './router'
 import Buefy from 'buefy'
 import { store } from '../vuex/store'
 import 'buefy/lib/buefy.css'
+import lodash from 'lodash'
+import VueLodash from 'vue-lodash/dist/vue-lodash.min'
 
-Vue.use(Vuex)
-Vue.use(Buefy)
+Vue.use(VueLodash, lodash, Vuex, Buefy)
 
 Vue.config.productionTip = false
 

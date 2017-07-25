@@ -1,15 +1,36 @@
 <template>
   <div class="character-card">
-    <h3 class="character-name">Player Name</h3>
-    <h5 class="initiative">Initiative</h5>
+    <input class="character-name" :value='charactername' />
+    <input class="initiative" :value='initiative' />
   </div>
 </template>
 
 <script>
   export default {
-    name: 'charactercard'
+    name: 'charactercard',
+    props: ['initiative', 'charactername'],
+    watch: {
+      charactername: function (update) {
+        this.updateCharacter(update)
+      },
+      initiative: function (update) {
+
+      }
+    },
+    methods: {
+      updateCharacter: function (character) {
+        console.log('testing debounce')
+        this.$store.commit('updateCharacter', character)
+      }
+    }
   }
 </script>
 
 <style>
+  .character-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: maroon;
+    width: 80%;
+  }
 </style>

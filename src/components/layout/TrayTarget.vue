@@ -24,6 +24,7 @@
     justify-content: center;
     align-items: center;
     overflow: auto;
+    margin-right: 3.25em;
     height: 100%;
     width: 75%;
     background-color: purple;
