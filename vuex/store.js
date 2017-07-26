@@ -41,6 +41,7 @@ export const store = new Vuex.Store({
     },
     updateCharacter (state, character) {
       Object.assign(state.character, character)
+      console.log('state.characters: ', state.characters, ' character: ', character)
     }
   }
 

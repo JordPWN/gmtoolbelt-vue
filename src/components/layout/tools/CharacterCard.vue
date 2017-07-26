@@ -1,26 +1,42 @@
 <template>
   <div class="character-card">
-    <input class="character-name" :value='charactername' />
-    <input class="initiative" :value='initiative' />
+    <input class="character-name" :v-model='characterName' :value='this.character.name' />
+    <input class="initiative" :v-model='characterInit' :value='this.character.initiative' />
   </div>
 </template>
 
 <script>
   export default {
     name: 'charactercard',
-    props: ['initiative', 'charactername'],
-    watch: {
-      charactername: function (update) {
-        this.updateCharacter(update)
-      },
-      initiative: function (update) {
-
+    props: ['character'],
+    // watch: {
+    //   characterName: function () {
+    //     console.log('charactername updated')
+    //     console.log(this.character)
+    //     this.updateCharacter()
+    //   },
+    //   characterInit: function () {
+    //     console.log('init updated')
+    //     this.updateCharacter()
+    //   }
+    // },
+    data () {
+      return {
+        // character.name: this.charactername,
+        // charInit: this.initiative
       }
     },
+    computed: {
+      mapGetters(['charactername'])
+    },
     methods: {
-      updateCharacter: function (character) {
-        console.log('testing debounce')
-        this.$store.commit('updateCharacter', character)
+      updateCharacter: function (refs) {
+        console.log('this.$refs.input.value: ', refs)
+        this.$store.commit('updateCharacter', refs)
+      },
+      updateValue: function () {
+        console.log('updating value')
+        this.updateCharacter()
       }
     }
   }

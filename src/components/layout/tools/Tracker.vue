@@ -4,9 +4,7 @@
       <li is="charactercard"
           v-for="(character, index) in this.$store.state.characters"
           v-on:remove="characters.splice(index, 1)"
-          :initiative= character.initiative
-          :charactername= character.name
-          :index= index
+          :character= character
       ></li>
     </ul>
     <div class="tracker-tool-container">
@@ -32,11 +30,6 @@
     name: 'tracker',
     components: {
       'charactercard': CharacterCard
-    },
-    computed: {
-      orderedCharacters: function () {
-        return this._.sortBy(this.$store.state.characters, 'initiative')
-      }
     },
     methods: {
       addCharacter: function () {
