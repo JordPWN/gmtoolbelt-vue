@@ -91,7 +91,8 @@
   .dice-results {
     display: flex;
     font-size: 5em;
-    width: 50%;
+    width: 100%;
+    justify-content: center;
   }
   .roll-log {
     justify-content: center;

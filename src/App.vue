@@ -32,5 +32,6 @@ export default {
     height: calc(100vh - 3.25em) !important;
     width: 100% !important;
     padding-left: 3.25em;
+    padding-right: 3.25em;
   }
 </style>
