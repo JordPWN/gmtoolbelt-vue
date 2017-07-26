@@ -24,7 +24,7 @@
     },
     data () {
       return {
-        isActive: true,
+        isActive: false,
         hasError: false
       }
     }

@@ -95,6 +95,7 @@
   .roll-log {
     justify-content: center;
     width: 100%;
+    max-height: 50vh;
     height: 40%;
     display: flex;
     overflow: scroll;
