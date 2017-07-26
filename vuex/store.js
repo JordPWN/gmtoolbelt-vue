@@ -8,6 +8,7 @@ Vue.use(Vuex, lodash, VueLodash)
 export const store = new Vuex.Store({
   state: {
     activeTray: '',
+    rollLog: [],
     characters: [
       {
         name: 'Jordan',
@@ -30,6 +31,9 @@ export const store = new Vuex.Store({
         initiative: 0
       }
       state.characters.push(newChar)
+    },
+    addRoll (state, roll) {
+      state.rollLog.push(roll)
     },
     activeTray (state, tray) {
       state.activeTray = tray

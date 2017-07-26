@@ -22,15 +22,18 @@
     </div>
     <div class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item">
-          Menu Item 1
-        </a>
-        <a class="navbar-item">
-          Menu Item 2
-        </a>
+        <router-link to="/dice" class="navbar-item">
+          Dice
+        </router-link>
+        <router-link to="/tracker" class="navbar-item">
+          Tracker
+        </router-link>
         <a class="navbar-item">
           Menu Item 3
         </a>
+        <div class="navbar-item login-button">
+          Login
+        </div>
       </div>
     </div>
 
@@ -43,3 +46,9 @@
     name: 'navbar'
   }
 </script>
+
+<style>
+  .login-button:hover {
+    background-color: whitesmoke;
+  }
+</style>

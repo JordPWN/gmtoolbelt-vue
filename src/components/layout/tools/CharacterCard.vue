@@ -27,7 +27,7 @@
       }
     },
     computed: {
-      mapGetters(['charactername'])
+      // mapGetters(['charactername'])
     },
     methods: {
       updateCharacter: function (refs) {

@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <navbar />
-    <tray />
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <tray class="left" />
+    <tray class="right" />
+    <router-view class="mainpage"></router-view>
   </div>
 </template>
 
@@ -20,11 +20,17 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
+  .mainpage {
+    background-color: pink;
+    height: calc(100vh - 3.25em) !important;
+    width: 100% !important;
+    padding-left: 3.25em;
+  }
 </style>
