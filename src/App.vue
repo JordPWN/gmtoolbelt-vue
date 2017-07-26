@@ -8,15 +8,15 @@
 </template>
 
 <script>
-import Navbar from './components/layout/Navbar'
-import Tray from './components/layout/Tray'
-export default {
-  name: 'app',
-  components: {
-    Navbar,
-    Tray
+  import Navbar from './components/layout/Navbar'
+  import Tray from './components/layout/Tray'
+  export default {
+    name: 'app',
+    components: {
+      Navbar,
+      Tray
+    }
   }
-}
 </script>
 
 <style>

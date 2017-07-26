@@ -64,16 +64,15 @@
     background-color: tomato;
   }
   .tray-toggle:after {
+    transition: ease-in-out .75s;
     content: '>';
-  }
-  .active-tray .tray-toggle:after {
-    content: '<';
+    transform: rotate(0deg);
   }
   .right .tray-toggle:after {
     content: '<';
   }
-  .right.active-tray .tray-toggle:after {
-    content: '>';
+  .active-tray .tray-toggle:after {
+    transform: rotate(-180deg);
   }
   .right .tray-toggle {
     left: 0;
