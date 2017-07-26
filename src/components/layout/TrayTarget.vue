@@ -25,7 +25,7 @@
     align-items: center;
     overflow: auto;
     height: 100%;
-    width: 75%;
+    width: calc(75% - 3.25em);
     background-color: purple;
   }
 </style>
