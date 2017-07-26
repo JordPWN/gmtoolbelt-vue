@@ -30,7 +30,7 @@
     <div class="roll-log">
       <ul>
         <li v-for="roll in this.$store.state.rollLog.reverse()">
-          You rolled a {{ roll.myRoll }} on a {{ roll.size }}-sided die!
+          You rolled a <strong>{{ roll.myRoll }}</strong> on a <strong>{{ roll.size }}</strong>-sided die!
         </li>
       </ul>
     </div>
@@ -47,7 +47,6 @@
     },
     methods: {
       rollDice: function (size) {
-        console.log(this.active === size, ' this.active: ', this.active, ' size: ', size)
         this.active = size
         this.roll = Math.floor(Math.random() * (size) + 1)
         var myRoll = this.roll

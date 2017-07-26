@@ -6,12 +6,12 @@ import App from './App'
 import Navbar from './components/layout/Navbar'
 import Tray from './components/layout/Tray'
 import router from './router'
-import Buefy from 'buefy'
+// import Buefy from 'buefy'
 import { store } from '../vuex/store'
 import 'buefy/lib/buefy.css'
 
 Vue.use(Vuex)
-Vue.use(Buefy)
+// Vue.use(Buefy)
 
 Vue.config.productionTip = false
 
