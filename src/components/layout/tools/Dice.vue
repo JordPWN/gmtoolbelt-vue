@@ -76,6 +76,7 @@
   }
   .active {
     background-color: black;
+    color: white;
   }
   .dice-size {
     display: flex;

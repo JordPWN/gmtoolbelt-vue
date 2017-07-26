@@ -2,9 +2,7 @@
   <div class="tray" :class="{ 'active-tray': isActive, 'text-danger': hasError}">
     <TrayMenu />
     <TrayTarget />
-    <div class="tray-toggle" v-on:click="toggleActive">
-      >
-    </div>
+    <div class="tray-toggle" v-on:click="toggleActive" />
   </div>
 </template>
 
@@ -64,6 +62,18 @@
     width: 3.25em;
     height: 100%;
     background-color: tomato;
+  }
+  .tray-toggle:after {
+    content: '>';
+  }
+  .active-tray .tray-toggle:after {
+    content: '<';
+  }
+  .right .tray-toggle:after {
+    content: '<';
+  }
+  .right.active-tray .tray-toggle:after {
+    content: '>';
   }
   .right .tray-toggle {
     left: 0;
