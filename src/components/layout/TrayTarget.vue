@@ -1,8 +1,8 @@
 <template>
   <div class='tray-target'>
-    <dice v-if="this.$store.state.activeTray == 'dice'" />
-    <notes v-if="this.$store.state.activeTray == 'notes'"/>
-    <tracker v-if="this.$store.state.activeTray == 'tracker'" />
+    <dice v-if="this.$store.state.tray[side].activeTray == 'dice'" :side=side />
+    <notes v-if="this.$store.state.tray[side].activeTray == 'notes'"/>
+    <tracker v-if="this.$store.state.tray[side].activeTray == 'tracker'" />
   </div>
 </template>
 
@@ -12,6 +12,7 @@
   import Tracker from './tools/Tracker'
   export default {
     name: 'traytarget',
+    props: ['side'],
     components: {
       Dice, Notes, Tracker
     }

@@ -29,7 +29,7 @@
   </div>
     <div class="roll-log">
       <ul>
-        <li v-for="roll in this.$store.state.rollLog.reverse()">
+        <li v-for="roll in this.$store.state.tray[this.side].rollLog.reverse()">
           You rolled a <strong>{{ roll.myRoll }}</strong> on a <strong>{{ roll.size }}</strong>-sided die!
         </li>
       </ul>
@@ -45,6 +45,7 @@
         active: 0
       }
     },
+    props: ['side'],
     methods: {
       rollDice: function (size) {
         this.active = size
@@ -53,7 +54,7 @@
         this.emitRoll({myRoll, size})
       },
       emitRoll: function (roll) {
-        this.$store.commit('addRoll', roll)
+        this.$store.commit('addRoll', [this.side, roll])
       }
     }
   }

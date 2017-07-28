@@ -1,7 +1,7 @@
 <template>
-  <div class="tray" :class="{ 'active-tray': isActive, 'text-danger': hasError}">
-    <TrayMenu />
-    <TrayTarget />
+  <div class="tray" :class="{ 'active-tray': isActive, 'text-danger': hasError, 'left': traySide == 'left', 'right': traySide == 'right'}">
+    <TrayMenu :side="this.side" />
+    <TrayTarget :side="this.side" />
     <div class="tray-toggle" v-on:click="toggleActive" />
   </div>
 </template>

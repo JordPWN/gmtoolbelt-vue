@@ -9,6 +9,16 @@ export const store = new Vuex.Store({
   state: {
     activeTray: '',
     rollLog: [],
+    tray: {
+      left: {
+        activeTray: '',
+        rollLog: []
+      },
+      right: {
+        activeTray: '',
+        rollLog: []
+      }
+    },
     characters: [
       {
         name: 'Jordan',
@@ -33,11 +43,11 @@ export const store = new Vuex.Store({
       state.characters.push(newChar)
     },
     addRoll (state, roll) {
-      state.rollLog.push(roll)
+      state.tray[roll[0]].rollLog.push(roll[1])
     },
-    activeTray (state, tray) {
-      state.activeTray = tray
-      console.log('state updated!')
+    activeTray (state, target) {
+      console.log('boo',target[0], target[1])
+      state.tray[target[1]].activeTray = target[0]
     },
     sortCharacters (state) {
       console.log('sortCharacters')

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <navbar />
-    <tray class="left" />
-    <tray class="right" />
+    <tray side="left" />
+    <tray side="right" />
     <router-view class="mainpage"></router-view>
   </div>
 </template>

@@ -2,16 +2,16 @@
   <div class="tray-menu">
     <ul>
       <li>
-        <a v-on:click="emitTray('dice')" :class="{ active: this.$store.state.activeTray === 'dice' }" >Dice</a>
+        <a v-on:click="emitTray('dice')" :class="{ active: this.$store.state.tray[this.side].activeTray === 'dice' }" >Dice</a>
       </li>
       <li>
-        <a v-on:click="emitTray('tracker')" :class="{ active: this.$store.state.activeTray === 'tracker' }" >Character Tracker</a>
+        <a v-on:click="emitTray('tracker')" :class="{ active: this.$store.state.tray[this.side].activeTray === 'tracker' }" >Character Tracker</a>
       </li>
       <li>
-        <a v-on:click="emitTray('spellbook')" :class="{ active: this.$store.state.activeTray === 'spellbook' }" >Spellbook</a>
+        <a v-on:click="emitTray('spellbook')" :class="{ active: this.$store.state.tray[this.side].activeTray === 'spellbook' }" >Spellbook</a>
       </li>
       <li>
-        <a v-on:click="emitTray('notes')" :class="{ active: this.$store.state.activeTray === 'notes' }" >Notes</a>
+        <a v-on:click="emitTray('notes')" :class="{ active: this.$store.state.tray[this.side].activeTray === 'notes' }" >Notes</a>
       </li>
     </ul>
   </div>
@@ -21,11 +21,11 @@
 <script>
   export default {
     name: 'traymenu',
+    props: ['side'],
     methods: {
       emitTray: function (tray) {
         console.log('Emmiting from menu!')
-        console.log(this.$store.state.activeTray)
-        this.$store.commit('activeTray', tray)
+        this.$store.commit('activeTray', [tray, this.side])
       }
     }
   }
