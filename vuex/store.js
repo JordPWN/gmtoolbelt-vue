@@ -43,7 +43,12 @@ export const store = new Vuex.Store({
       state.characters.push(newChar)
     },
     addRoll (state, roll) {
-      state.tray[roll[0]].rollLog.push(roll[1])
+      if (roll[0]){
+        state.tray[roll[0]].rollLog.push(roll[1])
+      }else{
+        console.log("pushing to mainpage")
+        state.rollLog.push(roll[1])
+      }
     },
     activeTray (state, target) {
       console.log('boo',target[0], target[1])

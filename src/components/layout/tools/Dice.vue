@@ -29,7 +29,7 @@
   </div>
     <div class="roll-log">
       <ul>
-        <li v-for="roll in this.$store.state.tray[this.side].rollLog.reverse()">
+        <li v-if="this.side !== null " v-for="roll in this.$store.state.tray[this.side].rollLog.reverse()">
           You rolled a <strong>{{ roll.myRoll }}</strong> on a <strong>{{ roll.size }}</strong>-sided die!
         </li>
       </ul>
@@ -45,7 +45,7 @@
         active: 0
       }
     },
-    props: ['side'],
+    props: {side: {default: ''}},
     methods: {
       rollDice: function (size) {
         this.active = size
