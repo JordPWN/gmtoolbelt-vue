@@ -11,8 +11,9 @@
 
 <style>
   .note {
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgb(192,128,192);
     border-radius: 1em;
     padding: .5em;
+    margin: .5em;
   }
 </style>

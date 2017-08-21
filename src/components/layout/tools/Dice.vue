@@ -89,6 +89,9 @@
     flex-flow: column wrap;
     width: 50%;
   }
+  .dice-list li:hover {
+    background-color: rgba(255,0,255,0.2);
+  }
   .dice-results {
     display: flex;
     font-size: 5em;

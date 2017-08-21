@@ -24,7 +24,6 @@
     props: ['side'],
     methods: {
       emitTray: function (tray) {
-        console.log('Emmiting from menu!')
         this.$store.commit('activeTray', [tray, this.side])
       }
     }
