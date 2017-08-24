@@ -79,6 +79,10 @@
     background-color: black;
     color: white;
   }
+  .active:hover {
+    background-color: #540054 !important;
+    color: white;
+  }
   .dice-size {
     display: flex;
     flex-flow: row wrap;

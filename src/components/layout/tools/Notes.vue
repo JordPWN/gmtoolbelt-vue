@@ -16,7 +16,7 @@
     </div>
     <div class="note-container">
       <note />
-      <div class="new-note">
+      <div class="new-note" v-on:click="addNote()">
         Add Note
       </div>
     </div>
@@ -28,6 +28,11 @@
     name: 'notes',
     components: {
       'note': Note
+    },
+    methods: {
+      addNote: function () {
+        console.log('Added note.')
+      }
     }
   }
 </script>
@@ -68,8 +73,9 @@
     background-color: rgba(255,255,255,0.5);
   }
   .note-container {
-    height: 100%;
+    height: calc(100% - 4em);
     width: 100%;
+    overflow-y:scroll;
     padding: .5em;
   }
   .new-note-tab {
